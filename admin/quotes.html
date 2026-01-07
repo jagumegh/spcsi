@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Requests - SPS Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-gem me-2"></i>
+                <span class="fw-bold">SPS Admin</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-box-seam"></i> Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html"><i class="bi bi-tags"></i> Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="enquiries.html"><i class="bi bi-envelope"></i> Enquiries</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="quotes.html"><i class="bi bi-telephone"></i> Quotes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="bi bi-images"></i> Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sliders.html"><i class="bi bi-sliders"></i> Sliders</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i> Admin
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-5 pt-4">
+        <div class="row">
+            <div class="col-12">
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h1 class="h3">Quote Requests Management</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Quote Requests</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-outline-primary active" data-filter="all">All</button>
+                        <button class="btn btn-outline-primary" data-filter="new">New</button>
+                        <button class="btn btn-outline-primary" data-filter="contacted">Contacted</button>
+                    </div>
+                </div>
+
+                <!-- Search Box -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search by mobile number or product...">
+                            <button class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quotes Table -->
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Quote Requests</h5>
+                        <span class="badge bg-primary">Total: 21</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Mobile Number</th>
+                                        <th>Product</th>
+                                        <th>Source</th>
+                                        <th>IP Address</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>21</td>
+                                        <td><i class="bi bi-phone me-2"></i>8905988715</td>
+                                        <td>Granite Name Plate</td>
+                                        <td><span class="badge bg-info">Home Page</span></td>
+                                        <td><code>::1</code></td>
+                                        <td>2026-01-06 10:45</td>
+                                        <td><span class="badge bg-warning">Not Contacted</span></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="#viewQuoteModal" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-sm btn-outline-success" title="Mark as Contacted">
+                                                    <i class="bi bi-telephone"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td><i class="bi bi-phone me-2"></i>1234567892</td>
+                                        <td>Sandstone Elephant Statue</td>
+                                        <td><span class="badge bg-info">Home Page</span></td>
+                                        <td><code>::1</code></td>
+                                        <td>2026-01-06 10:43</td>
+                                        <td><span class="badge bg-warning">Not Contacted</span></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
+                                                <button class="btn btn-sm btn-outline-success"><i class="bi bi-telephone"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td><i class="bi bi-phone me-2"></i>7850984303</td>
+                                        <td>Granite Name Plate</td>
+                                        <td><span class="badge bg-info">Home Page</span></td>
+                                        <td><code>::1</code></td>
+                                        <td>2026-01-06 10:42</td>
+                                        <td><span class="badge bg-warning">Not Contacted</span></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
+                                                <button class="btn btn-sm btn-outline-success"><i class="bi bi-telephone"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td><i class="bi bi-phone me-2"></i>7850984303</td>
+                                        <td>Granite Name Plate</td>
+                                        <td><span class="badge bg-info">Home Page</span></td>
+                                        <td><code>::1</code></td>
+                                        <td>2026-01-06 10:42</td>
+                                        <td><span class="badge bg-warning">Not Contacted</span></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
+                                                <button class="btn btn-sm btn-outline-success"><i class="bi bi-telephone"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td><i class="bi bi-phone me-2"></i>9876543210</td>
+                                        <td>Marble Buddha Statue</td>
+                                        <td><span class="badge bg-info">Home Page</span></td>
+                                        <td><code>::1</code></td>
+                                        <td>2026-01-06 10:39</td>
+                                        <td><span class="badge bg-success">Contacted</span></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
+                                                <button class="btn btn-sm btn-outline-secondary" disabled>
+                                                    <i class="bi bi-telephone"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav aria-label="Quote pagination" class="mt-3">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2026 Stone Product Store. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-0">Admin Dashboard v1.0</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- View Quote Modal -->
+    <div class="modal fade" id="viewQuoteModal" tabindex="-1" aria-labelledby="viewQuoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title" id="viewQuoteModalLabel"><i class="bi bi-telephone"></i> Quote Request Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <h6>Contact Information</h6>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-circle bg-primary me-3">
+                                <i class="bi bi-telephone text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">8905988715</h4>
+                                <p class="text-muted mb-0">Mobile Number</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h6>Request Information</h6>
+                            <table class="table table-sm">
+                                <tbody>
+                                    <tr><th>ID:</th><td>21</td></tr>
+                                    <tr><th>Product:</th><td>Granite Name Plate</td></tr>
+                                    <tr><th>Source:</th><td>Home Page</td></tr>
+                                    <tr><th>IP Address:</th><td>::1</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Status Information</h6>
+                            <table class="table table-sm">
+                                <tbody>
+                                    <tr><th>Date:</th><td>2026-01-06 10:45:44</td></tr>
+                                    <tr><th>Status:</th><td><span class="badge bg-warning">Not Contacted</span></td></tr>
+                                    <tr><th>Is Contacted:</th><td>No</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        This quote request was submitted from the homepage. The customer is interested in "Granite Name Plate".
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="tel:8905988715" class="btn btn-success">
+                        <i class="bi bi-telephone"></i> Call Customer
+                    </a>
+                    <button type="button" class="btn btn-primary">
+                        <i class="bi bi-check-circle"></i> Mark as Contacted
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Filter quotes
+        document.querySelectorAll('[data-filter]').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                this.parentElement.querySelectorAll('.btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Apply filter
+                const rows = document.querySelectorAll('tbody tr');
+                
+                rows.forEach(row => {
+                    const status = row.querySelector('.badge').textContent.toLowerCase();
+                    let show = false;
+                    
+                    if (filter === 'all') show = true;
+                    else if (filter === 'new' && status.includes('not')) show = true;
+                    else if (filter === 'contacted' && status.includes('contacted')) show = true;
+                    
+                    row.style.display = show ? '' : 'none';
+                });
+            });
+        });
+        
+        // Search functionality
+        document.querySelector('input[type="text"]').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
